@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BladeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,4 +16,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+// controller group route::
+Route::controller(BladeController::class)->group(function(){
+    Route::get('home','show')->name('show');
 });
