@@ -7,13 +7,18 @@ use Spatie\FlareClient\View;
 
 class BladeController extends Controller
 {
-    // Blade Templete:
+   // Blade Templete:
     public function show(){
         $data = [
-            'name' => 'shah alam',
+            'name' => '',
             'age' => 21,
             'address' => 'dhaka' 
         ] ;
         return View('home',compact('data'));
     }
+
+    // public function show(){
+     
+    //     return env('API_URL');
+    // }
 }
