@@ -10,9 +10,10 @@ class BladeController extends Controller
    // Blade Templete:
     public function show(){
         $data = [
-            'name' => '',
+            'name' => 'shah alam',
             'age' => 21,
-            'address' => 'dhaka' 
+            'address' => 'dhaka' ,
+            'subject' =>['bangla','english','math']
         ] ;
         return View('home',compact('data'));
     }

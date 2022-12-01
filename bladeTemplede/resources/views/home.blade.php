@@ -47,8 +47,77 @@
   {{-- environment directives --}}
   @env(['local','staging'])
   this is local
-
-    
   @endenv
+
+
+  {{-- switch derictives --}}
+
+  @switch($name)
+    @case("shah alam")
+      first
+      @break
+    @case(2)
+      case 2
+    @break
+    @default
+      this is default message
+  @endswitch
+
+
+  {{-- for derectives --}}
+  @for ($i = 0;$i<10;$i++)
+    {{ $i }}
+  @endfor
+
+  {{-- foreach  --}}
+
+{{  $data['name']}}
+  @foreach ($data['subject'] as $s)
+    {{ $s }} <br>
+  @endforeach
+
+  {{-- forelse --}}
+
+  @forelse ($data['subject'] as $std)
+    {{ $std }} <br><br>
+  @empty
+    <p>No data found</p>
+  @endforelse
+
+
+  {{-- break and continue --}}
+
+@foreach ($data['subject'] as $std)
+ 
+  @continue($std == 'english')
+  {{ $std }}
+@endforeach
+
+{{-- loop --}}
+
+@foreach ($data['subject'] as $std)
+  {{ $std }}
+  @if ($loop->first)
+  <p>{{ __("this is first loop" ) }}</p> <br>
+  @endif
+  @if ($loop->last)
+    {{ __('this is last loop') }}
+  @endif
+
+@endforeach
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </body>
 </html>
