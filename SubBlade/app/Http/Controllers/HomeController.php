@@ -8,7 +8,7 @@ class HomeController extends Controller
 {
     //
     public function show(){
-        $user = 'user';
+        $user = 'Admin';
         $userType = $user == 'Admin'? true: false;
         return view('home',compact('userType'));
     }
