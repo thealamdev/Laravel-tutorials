@@ -12,10 +12,14 @@ class card extends Component
      * @return void
      */
     public $title;
-    public function __construct($title)
+    public $subtitle;
+    public $description;
+    public function __construct($title, $subtitle,$description)
     {
         //
         $this->title = $title;
+        $this->subtitle = $subtitle;
+        $this->description = $description;
     }
 
     /**
@@ -26,5 +30,10 @@ class card extends Component
     public function render()
     {
         return view('components.card');
+    }
+
+    // component method:
+    public function addNumber($a){
+        return $a + 30;
     }
 }
